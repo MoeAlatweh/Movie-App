@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django.urls import path
 from .views import home_page, create, edit, delete
 
@@ -9,7 +9,7 @@ urlpatterns = [
     path('edit/<str:movie_id>', edit, name='edit'),
     path('delete/<str:movie_id>', delete, name='delete')
 ]
-=======
+
 # import path from django.urls to be able to use down
 from django.urls import path
 # import all function we create inside file view.py
@@ -25,4 +25,4 @@ path('delete/<str:movie_id>', delete, name='delete'),
 ##path('trailer/<str:movie_id>', trailer, name='trailer'),
 ]
 
->>>>>>> step_0_start
+
