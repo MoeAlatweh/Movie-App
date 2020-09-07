@@ -25,7 +25,7 @@ SECRET_KEY = 'a_sgw7^4&vhc0)guovb_$ndjim7rfmj&1vf9xf1kb%)#@_&$(='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://moe-movieapp.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['moe-movieapp.herokuapp.com', '127.0.0.1:8000']
 
 
 
@@ -51,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
     #add this line to deploy on horoku
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
