@@ -1,0 +1,22 @@
+
+use anaconda as normal to create vetual enviroment and activated 
+install all requerments as normal: pip install -r requirements.txt
+while we use dgongo to run server of your app use: manage.py runserver
+need to create app called (movies) by typing : manage.py startapp movies
+go to setting.py >>>find installed app>>> add movies by type 'movies',
+
+to activate the vertual envairoment forthis project type:
+conda activate movie_app
+
+sometimes you need to rerun the server to see differnce in your page
+
+# initelize the reposetery to put in your github account by using: git init
+# first type: git add .
+# then commit that by typing: git commit -m "Initial commit. Setting up the project 
+# then go to your github account and create new reposetery
+
+what is Django?
+Django (/ˈdʒæŋɡoʊ/ jang-goh) is a free and open source web application framework, written in Python.
+A web framework is a set of components that helps you to develop websites faster and easier.
+When you're building a website, you always need a similar set of components:
+a way to handle user authentication (signing up, signing in, signing out), a management panel for your website, forms, a way to upload files, etc.  

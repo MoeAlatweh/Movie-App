@@ -1,0 +1,54 @@
+## step0_start
+
+from django.urls import path
+from .views import home_page
+
+# need to change parentheses from {} to [], if not will give you an error
+urlpatterns = [
+path('', home_page, name ='home_page')
+]
+
+
+
+# step_4_ create_backend
+
+from django.urls import path
+from .views import home_page, create
+
+# need to change parentheses from {} to [], if not will give you an error
+urlpatterns = [
+path('', home_page, name ='home_page'),
+path('create/', create, name='create'),
+]
+ 
+
+
+# step_7_edit_movie_backend
+
+from django.urls import path
+from .views import home_page, create, edit
+
+# need to change parentheses from {} to [], if not will give you an error
+urlpatterns = [
+path('', home_page, name ='home_page'),
+path('create/', create, name='create'),
+path('edit/<str:movie_id>', edit, name='edit'),
+]
+
+
+# step_8_delete_movie
+
+from django.urls import path
+from .views import home_page, create, edit, delete
+
+# need to change parentheses from {} to [], if not will give you an error
+urlpatterns = [
+path('', home_page, name ='home_page'),
+path('create/', create, name='create'),
+path('edit/<str:movie_id>', edit, name='edit'),
+path('delete/<str:movie_id>', delete, name='delete'),
+]
+
+
+
+

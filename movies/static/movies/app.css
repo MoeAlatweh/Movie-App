@@ -17,7 +17,8 @@ body::before {
     left: 0;
     width: 100%;
     content: " ";
-	border-bottom: 0.5rem solid #FCAB07;
+    /* change color to dark red */
+	border-bottom: 0.5rem solid #8B0000;
     z-index: 9999;
 }
 
@@ -66,7 +67,7 @@ body::before {
     text-transform: uppercase;
     letter-spacing: 1.2px;
     font-family: 'Anton', sans-serif;
-    color: #fff;
+    color: #FFD700;
     font-size: 2rem;
     text-decoration: none;
 }
@@ -124,12 +125,12 @@ body::before {
     border-radius: 4px;
     position: relative;
 }
-
+/* change color to dark red */
 .movies__item-title {
-    border-right: 1px solid #eee;
-    border-left: 1px solid #eee;
+    border-right: 1px solid #202020;
+    border-left: 1px solid #202020;
     color: black;
-	background: white;
+	background: #8B0000;
     text-align: center;
     padding: 1rem;
     font-family: Anton;
@@ -261,5 +262,10 @@ body::before {
 }
 
 .movies__item.full-width {
+<<<<<<< HEAD:movies/static/movies/app.css
     width: 100%;
 }
+=======
+    width : 100%
+}
+>>>>>>> step_0_start:static/movies/app.css

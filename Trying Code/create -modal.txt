@@ -1,0 +1,48 @@
+#  step_3_create_movies_frontend
+
+<!-- create html file for Create Movie window  -->
+<div class="modal fade" id="modal-create">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"  id="exampleModalLabel">Create Movie</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+
+            <!-- Create the fields that's input information of movie we create -->
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <!-- add this line for security to protect our data-->
+                    {% csrf_token %}
+                    <!-- add label for movie name -->
+                    <div class="form-group">
+                        <label for="movieName">Name</label>
+                        <input type="text" class="form-control" id="movieName" placeholder="Enter Movie Name" name="name" required/>
+                    </div>
+                    <!-- add label for movie picture -->
+                    <div class="form-group">
+                        <label for="moviePicture">Picture</label>
+                        <input type="text" class="form-control" id="moviePicture" placeholder="Image URL" name="picture"/>
+                    </div>
+                    <!-- add label for movie rating -->
+                    <div class="form-group">
+                        <label for="movieRating">Rating</label>
+                        <input type="text" class="form-control" id="movieRating" placeholder="1-10" name="rating" min="0" max="10" required />
+                    </div>
+                    <!-- add label for movie notes -->
+                    <div class="form-group">
+                        <label for="movieNotes">Notes</label>
+                        <!-- use text area to have movie notes -->
+                        <textarea name="notes" id="movieNotes" class="form-control"></textarea>
+                    </div>
+                    <!-- add button to submit our new movie -->
+                    <button type="submit" class="btn btn-primary">Create new movie</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
