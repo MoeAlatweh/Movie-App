@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
     #add this line to deploy on horoku
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
@@ -122,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 
 ##add lines below to deploy app on horuko
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
