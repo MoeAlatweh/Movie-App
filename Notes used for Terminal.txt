@@ -14,6 +14,7 @@ sometimes you need to rerun the server to see differnce in your page
 # first type: git add .
 # then commit that by typing: git commit -m "Initial commit. Setting up the project 
 # then go to your github account and create new reposetery
+# add, commit , push
 
 what is Django?
 Django (/ˈdʒæŋɡoʊ/ jang-goh) is a free and open source web application framework, written in Python.
