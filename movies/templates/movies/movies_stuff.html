@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- (for step_1) to load static files that have css,js file to style our app-->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- add link from online of front awesome by go and search to cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- add link from online of bootstrap by go and search to bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- add link from cdn website by adding library of animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <!-- to import our css file -->
+    <link rel="stylesheet" href="{% static 'movies/app.css' %}" />
+    <title>Movies App</title>
+</head>
+<body>
+    <!-- create the main div class-->
+    <div class="wrapper">
+        <!-- create div that's have navigation menu-->
+        <div class="nav">
+            <div class="container">
+                <div class="nav__menu">
+                    <!-- create navigation header name and called Moe Movies,make it as link to take you to home page(/) when you click on it -->
+                    <a class="nav__header" href="/">Moe Movies</a>
+                    <!-- use bootstrap to locate it in the top-right of the page -->
+                    <div class="col-md-5 pull-right">
+                        <!-- add (class="form-inline") to style it-->
+                        <form name="search" action="" class="form-inline">
+                            <!-- add (class="form-control") to style it-->
+                            <input type="text" name="query" class="form-control" value="{{request.GET.query}}"/>
+                            <!-- add (class="btn btn-primary") to style it-->
+                            <input type="submit" class="btn btn-primary" value="Search"/>
+                        </form>
+                    </div>
+                    <!-- add button to connect with create-modal html file -->
+                    <!-- we use data-target="#modal-create"  to connet with create-model.html by put id: model-creatr (you will find it in the top of model-create.html as id) -->
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modal-create">Create Movie</button>
+                </div>
+            </div>
+        </div>
+        <!-- add section to style movies list inside-->
+        <section class="result">
+            <div class="container">
+                <!-- need to add messages above movies list -->
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        <!-- add small x button to close the message -->
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        {{ message }}
+                    {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="movies">
+                    {% for movie in search_result %}
+                    <div class="movies__item">
+                        <!-- class from bootstrap -->
+                        <i class="movies__item-star fa fa-star hide"></i>
+                        <p class="movies__item-rating hide">{{ movie.rating }}/10</p>
+                        <!-- add button to connect with detail-modal.html file -->
+                        <button type="button" class="movies__item-expander hide" data-toggle="modal" data-target="#modal-{{ movie.id }}">View Detail</button>
+                        <img class="movies__item-image" src="{{ movie.picture }}" alt="" />
+                        <div class="movies__item-title">
+                            <p>{{ movie.name }}</p>
+                        </div>
+                    </div>
+                    <!-- add include comment to connect detail-modal.html with main html file(movies_stuff.html) -->
+                    {% include 'movies/detail-modal.html' %}
+                    <!-- add include comment to connect edit-modal.html with main html file(movies_stuff.html) -->
+                    {% include 'movies/edit_modal.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- add include comment to connect create model.html with main html file(movies_stuff.html) -->
+    {% include "movies\create-modal.html" %}
+    <!-- add link for javascript from online-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- add our link of javascript file-->
+    <script src="{% static 'movies/app.js' %}"></script>
+</body>
+</html>
+
+<!--  after you create models,view, and urls,  you need to migrate our database: -->
+<!--  go to your terminal and type manage.py makemigrations>> that's show you file under migrations with name 0001_in...-->
+<!--  to create the database type manage.py migrate -->
+<!--  then go to admin.py to register the modele-->
