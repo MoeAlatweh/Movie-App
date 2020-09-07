@@ -25,11 +25,8 @@ SECRET_KEY = 'a_sgw7^4&vhc0)guovb_$ndjim7rfmj&1vf9xf1kb%)#@_&$(='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['*']
-=======
 ALLOWED_HOSTS = ['https://moe-movieapp.herokuapp.com', '127.0.0.1:8000']
->>>>>>> step_0_start
+
 
 
 # Application definition
@@ -41,10 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-=======
+
     # we create that app and called it movies
->>>>>>> step_0_start
     'movies',
 ]
 
