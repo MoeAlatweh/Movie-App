@@ -10,7 +10,10 @@ conda activate movie_app
 
 sometimes you need to rerun the server to see differnce in your page
 
-
+# initelize the reposetery to put in your github account by using: git init
+# first type: git add .
+# then commit that by typing: git commit -m "Initial commit. Setting up the project 
+# then go to your github account and create new reposetery
 
 what is Django?
 Django (/ˈdʒæŋɡoʊ/ jang-goh) is a free and open source web application framework, written in Python.
