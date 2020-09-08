@@ -125,4 +125,4 @@ STATIC_URL = '/static/'
 
 ##add lines below to deploy app on horuko
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'movies/static/movies')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'movies/static')]
