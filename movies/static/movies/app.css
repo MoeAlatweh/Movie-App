@@ -262,10 +262,6 @@ body::before {
 }
 
 .movies__item.full-width {
-<<<<<<< HEAD:movies/static/movies/app.css
     width: 100%;
 }
-=======
-    width : 100%
-}
->>>>>>> step_0_start:static/movies/app.css
+

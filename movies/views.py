@@ -71,20 +71,3 @@ def delete(request, movie_id):
     except Exception as e:
         messages.warning(request, 'Got an error when trying to delete a movie: {}'.format(e))
     return redirect('/')
-
-#def trailer(request, movie_id):
- #   data = {
-  #      'trailer': request.POST.get('trailer'),
-   # }
-    #try:
-    #
-     #   movie_obj = Movie.trailer.get(id=movie_id)
-      #  movie_name= movie_obj.name
-       # movie_obj.trailer = data.get('trailer')
-        ##messages.success(request, "Movie Deleted: {}".format(movie_name))
-    #except Exception as e:
-     #   pass
-        #messages.warning(request, "Got an error when trying to delete a movie: {}".format(movie_name))
-    #return redirect('/')
-
-

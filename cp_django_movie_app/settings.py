@@ -28,7 +28,6 @@ DEBUG = False
 ALLOWED_HOSTS = ['moe-movieapp.herokuapp.com', '127.0.0.1:8000']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # we create that app and called it movies
     'movies',
 ]
@@ -124,7 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 ##add lines below to deploy app on horuko
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
